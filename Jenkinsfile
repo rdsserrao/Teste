@@ -10,7 +10,7 @@ pipeline {
             stages {
                 stage('Clone') {
                     steps {
-                        git branch: 'main', url: 'https://github.com/Projeto-Cloud/Teste.git'
+                        git branch: 'main', url: 'https://github.com/rdsserrao/Teste.git'
                     }
                 }
                 stage('SonarQube analysis') {
@@ -19,7 +19,7 @@ pipeline {
                                     sh "mvn clean package sonar:sonar \
                                     -D sonar.login=f5f103028120cd31b483291025b64a8a640aa10c \
                                     -D sonar.projectKey=Teste \
-                                    -D sonar.java.binaries=/home/jenkins/workspace/Teste \
+                                    -D sonar.java.binaries=/home/jenkins/workspace/Teste_Jenkins_Sonar \
                                     -D sonar.java.source=11 \
                                     -D sonar.host.url=http://sonar:9000/"
                             }
