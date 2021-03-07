@@ -1,7 +1,0 @@
-Linha de comandos na pasta onde está o Dockerfile:
-
-Montar a imagem -> C:\Users\Ricardo\Downloads\backend-java\book>docker build -t movies .
-
-Criar o contentor -> C:\Users\Ricardo\Downloads\backend-java\book>docker run -p 8080:8080 -d --name movie movie:latest
-
-Ir ao Postman e colcoar o URL (endpoint) http://localhost:8080/movies, ou diretamente no browser, para ver a API a funcionar.
