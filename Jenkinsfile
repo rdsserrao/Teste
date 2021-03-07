@@ -15,11 +15,8 @@ pipeline {
                 }
                 stage('SonarQube analysis') {
                     steps {
-                            withSonarQubeEnv('sonarqube') {
-                                    sh "mvn clean package sonar:sonar \
-                                    -D sonar.login=f5f103028120cd31b483291025b64a8a640aa10c \
-                                    -D sonar.projectKey=Teste \
-                                    -D sonar.host.url=http://sonar:9000/"
+                        withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonarq') {
+                            sh 'mvn clean package sonar:sonar'
                             }
                         }
                     }
